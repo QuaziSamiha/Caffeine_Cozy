@@ -5,9 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  // to disable all color and theme
+
+  // added daisy ui theme (19.04.24)
   daisyui: {
-    themes: [],
+    themes: ["light", "dark"],
   },
+
   plugins: [require("daisyui")],
 };
