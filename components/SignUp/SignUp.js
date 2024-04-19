@@ -5,7 +5,7 @@ const SignUp = () => {
   return (
     <>
       <div className="mx-56 my-12">
-        <div className="flex justify-center items-center bg-[#fafafa] rounded-lg">
+        <div className="flex justify-center items-center bg-[#fafafa] rounded-lg shadow-xl">
           <div className="flex justify-around gap-10">
             <div className="w-1/2 bg-[#fafafa]">
               <div className="bg-white shadow-xl">
