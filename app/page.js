@@ -1,8 +1,10 @@
-export default function Home() {
+import SignUp from "@/components/SignUp/SignUp";
+const Home = () => {
   return (
-    <main>
-      <h1 className="text-red-500">hello world</h1>
-    </main>
-
+    <>
+      <SignUp />
+    </>
   );
-}
+};
+
+export default Home;
