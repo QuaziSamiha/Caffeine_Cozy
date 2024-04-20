@@ -20,7 +20,7 @@ const Sidebar = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu px-4 pt-12 w-60 min-h-full bg-[#3d2d2d] text-[#f1d1a8] font-medium uppercase">
+          <ul className="menu px-4 pt-12 w-60 min-h-screen bg-[#3d2d2d] text-[#f1d1a8] font-medium uppercase">
             {/* Sidebar content here */}
             <li>
               <Link href="/Dashboard/Product">Product</Link>
