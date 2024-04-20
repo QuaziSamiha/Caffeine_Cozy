@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="flex-1">
           <div className="flex items-center">
             <Image className="h-12 w-10" src={logo} alt="coffee cup" />
-            <p className="font-bold fon text-2xl tracking-wide">CaffeineCozy</p>
+            <p className="font-bold fon text-2xl tracking-wide uppercase">CaffeineCozy</p>
           </div>
         </div>
         <div className="flex-none">
