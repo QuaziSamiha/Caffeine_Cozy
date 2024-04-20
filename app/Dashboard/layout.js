@@ -1,4 +1,4 @@
-import Navbar from "@/components/SignUp/Navbar/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 
 const layout = ({ children }) => {
   return (
