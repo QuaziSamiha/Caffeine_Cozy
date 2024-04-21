@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { createContext, useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -12,14 +12,22 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
   //   used in SignUp component
-  const createUser = (email, password) => {
+  const createUser = (name, email, password, role) => {
+    const newUser = {
+      name,
+      email,
+      role,
+    };
+    setUsers((prevUsers) => [...prevUsers, newUser]); // Push new user to the array
+
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  console.log(users);
 
   //   used in SignIn component
   const userLogin = (email, password) => {
@@ -35,6 +43,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     createUser, // called from SignUp component
+    users,
     userLogin, // called from SignIn component
     userLogOut, // called from Navbar component
   };

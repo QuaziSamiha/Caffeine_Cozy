@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
-import user from "@/public/images/user.jpg";
+import userImage from "@/public/images/user.jpg";
+import { useContext } from "react";
+import { AuthContext } from "@/app/context/AuthProvider";
 const Users = () => {
+  const { users } = useContext(AuthContext);
+  console.log(users);
   return (
     <>
       <section className="mx-12 py-12">
@@ -9,15 +14,37 @@ const Users = () => {
         </h1>
         <section className="grid grid-cols-2 gap-10">
           <div className="mx-4 bg-base-100 shadow-xl rounded p-6 flex justify-around items-center">
-            <Image className="h-24 w-24 rounded-full" src={user} alt="user" />
+            <Image className="h-24 w-24 rounded-full" src={userImage} alt="user" />
             <div className="ml-4">
               <p className="text-[#3d2d2d] font-semibold">Samiha Tasnim</p>
-              <p className="text-[#0f172a] text-sm font-medium">quazisamiha@gmail.com</p>
+              <p className="text-[#0f172a] text-sm font-medium">
+                quazisamiha@gmail.com
+              </p>
               <button className="mt-3 bg-[#fce1c3] text-[#3d2d2d] px-3 py-1 rounded border-b-2 border-[#3d2d2d] text-sm font-semibold">
                 Make Admin
               </button>
             </div>
           </div>
+          {users.map((user, index) => (
+            <div key={index}>
+              <div className="mx-4 bg-base-100 shadow-xl rounded p-6 flex justify-around items-center">
+                <Image
+                  className="h-24 w-24 rounded-full"
+                  src={userImage}
+                  alt="user"
+                />
+                <div className="ml-4">
+                  <p className="text-[#3d2d2d] font-semibold">{user.name}</p>
+                  <p className="text-[#0f172a] text-sm font-medium">
+                    {user.email}
+                  </p>
+                  <button className="mt-3 bg-[#fce1c3] text-[#3d2d2d] px-3 py-1 rounded border-b-2 border-[#3d2d2d] text-sm font-semibold">
+                    Make Admin
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </section>
       </section>
     </>

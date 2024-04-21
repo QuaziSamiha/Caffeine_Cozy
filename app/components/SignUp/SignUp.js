@@ -27,7 +27,7 @@ const SignUp = () => {
     formData.password = userPassword;
     formData.role = "user";
 
-    createUser(formData.email, formData.password)
+    createUser(formData.name, formData.email, formData.password, formData.role)
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;

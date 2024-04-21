@@ -1,6 +1,11 @@
+"use client";
+import { AuthContext } from "@/app/context/AuthProvider";
 import Link from "next/link";
+import { useContext } from "react";
 
 const Sidebar = () => {
+  const { users } = useContext(AuthContext);
+  console.log(users);
   return (
     <>
       <div className="drawer lg:drawer-open mt-12">
