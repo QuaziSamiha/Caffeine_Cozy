@@ -1,4 +1,5 @@
 "use client";
+// ALL IMPORTS
 import Image from "next/image";
 import Link from "next/link";
 import authImg from "@/public/images/auth.png";
@@ -7,7 +8,9 @@ import { AuthContext } from "@/app/context/AuthProvider";
 import { useRouter } from "next/navigation";
 
 const SignIn = () => {
+  // ALL ESSENTIALS HOOKS
   const router = useRouter();
+  const [error, setError] = useState(false);
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [formData, setFormData] = useState({
@@ -15,39 +18,54 @@ const SignIn = () => {
     password: "",
   });
 
+  // userLogin function is defined at AuthProvider component for firebasse authentication
   const { userLogin } = useContext(AuthContext);
 
+  // form actions
   const handleSignIn = (e) => {
     e.preventDefault();
     formData.email = userEmail;
     formData.password = userPassword;
 
+    // userLogin function is defined at AuthProvider component for firebasse authentication
     userLogin(formData.email, formData.password)
       .then((userCredential) => {
         // Signed In
         const user = userCredential.user;
         console.log("signed in successfully");
+        // if user signed in successfully, then it will redirect to Dashboard route
         router.push("/Dashboard");
       })
       .catch((error) => {
+        // if any error occurs during sign up following code will be executed
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(true);
         console.log(errorCode, errorMessage);
       });
-    console.log("clicked");
-    console.log(formData);
+    // console.log("clicked");
+    // console.log(formData);
   };
   return (
     <>
-      <div className="mx-56 my-12">
+      <div className="mx-8 xl:mx-56 my-12">
         <div className="flex justify-center items-center bg-[#fafafa] rounded-lg shadow-xl">
-          <div className="flex justify-around gap-10">
-            <div className="w-1/2 bg-[#fafafa]">
-              <div className="bg-white shadow-xl">
-                <div className="mx-4 mt-14">
-                  <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold">
+          <div className="flex flex-col-reverse md:flex-row md:justify-around gap-10 p-4">
+            <div className="md:w-1/2 bg-[#fafafa]">
+              <div className="bg-white shadow-xl pt-2 md:pt-0">
+                <div className="mx-4 md:mt-14">
+                  <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold hidden md:block">
                     Sign In
                   </h1>
+                  {/* -------------------- Error message , if any error occurs -------------- */}
+                  {error === true ? (
+                    <p className="text-xs text-blue-600 text-center">
+                      Ivalid Credintials
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                  {/* --------------------------------- FORM ----------------------------------- */}
                   <div className="mx-4 mt-1">
                     <form onSubmit={handleSignIn}>
                       <input
@@ -71,7 +89,7 @@ const SignIn = () => {
                       />
                     </form>
                     <p className="text-xs text-center text-[#131932] pb-4">
-                      New to CaffeineCozy?{" "}
+                      New here?{" "}
                       <Link href="/">
                         {" "}
                         <span className="text-[#8d2232] font-bold">
@@ -83,7 +101,11 @@ const SignIn = () => {
                 </div>
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
+              <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold md:hidden">
+                Sign In
+              </h1>
+              {/* --------------------- sign in image --------------------------- */}
               <Image
                 className="h-[500px] w-[500px]"
                 src={authImg}
