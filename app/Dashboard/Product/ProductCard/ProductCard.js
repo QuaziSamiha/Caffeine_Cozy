@@ -3,7 +3,7 @@ import deleteBtn from '@/public/images/delete.png'
 import updateBtn from '@/public/images/update.png'
 
 const ProductCard = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <>
       <div className="mx-6">
