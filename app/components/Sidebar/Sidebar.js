@@ -4,8 +4,14 @@ import Link from "next/link";
 import { useContext } from "react";
 
 const Sidebar = () => {
-  const { users } = useContext(AuthContext);
+  const { users, currentUserEmail } = useContext(AuthContext);
   console.log(users);
+
+  const currentUserRole = users.find(
+    (user) => user.email === currentUserEmail
+  )?.role;
+  console.log(currentUserRole);
+
   return (
     <>
       <div className="drawer lg:drawer-open mt-12">

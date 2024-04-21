@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -16,6 +17,7 @@ const AuthProvider = ({ children }) => {
     const storedUsers = localStorage.getItem("users");
     return storedUsers ? JSON.parse(storedUsers) : [];
   });
+  const [currentUserEmail, setCurrentUserEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -42,6 +44,20 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      // console.log(currentUser.email);
+      setCurrentUserEmail(currentUser ? currentUser.email : "");
+      setLoading(false);
+    });
+
+    return () => {
+      return unsubscribe();
+    };
+  }, []);
+
+  // console.log(currentUserEmail);
+
   //   used in Navbar component
   const userLogOut = () => {
     setLoading(true);
@@ -51,6 +67,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     createUser, // called from SignUp component
     users,
+    currentUserEmail,
     userLogin, // called from SignIn component
     userLogOut, // called from Navbar component
   };

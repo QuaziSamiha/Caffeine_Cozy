@@ -25,6 +25,7 @@ const SignUp = () => {
     formData.name = userName;
     formData.email = userEmail;
     formData.password = userPassword;
+    // formData.role = "admin";
     formData.role = "user";
 
     createUser(formData.name, formData.email, formData.password, formData.role)
