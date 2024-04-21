@@ -1,4 +1,5 @@
 "use client";
+// ALL IMPORTS
 import Image from "next/image";
 import Link from "next/link";
 import authImg from "@/public/images/auth.png";
@@ -7,6 +8,7 @@ import { AuthContext } from "@/app/context/AuthProvider";
 import { useRouter } from "next/navigation";
 
 const SignUp = () => {
+  // ALL ESSENTIALS HOOKS
   const router = useRouter();
   const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
@@ -19,13 +21,18 @@ const SignUp = () => {
     role: "",
   });
 
+  // createUser function is defined at AuthProvided component
   const { createUser } = useContext(AuthContext);
 
+  // form submit actions
   const handleSubmit = (e) => {
     e.preventDefault();
+    // assigning input values
     formData.name = userName;
     formData.email = userEmail;
     formData.password = userPassword;
+    // **************************************** IMPORTANT ****************************************************
+    // here I manually change the userRole, if you want to sign up as an admin, then comment out line 36 and vice-versa
     // formData.role = "admin";
     formData.role = "user";
 
@@ -39,6 +46,7 @@ const SignUp = () => {
         router.push("/Dashboard");
       })
       .catch((error) => {
+        // if any error occurs during sign up following code will be executed
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(true);
@@ -58,6 +66,7 @@ const SignUp = () => {
                   <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold hidden md:block">
                     Sign Up
                   </h1>
+                  {/* -------------------- Error message , if any error occurs -------------- */}
                   {error === true ? (
                     <p className="text-xs text-blue-600 text-center">
                       Already Signed Up
@@ -65,6 +74,7 @@ const SignUp = () => {
                   ) : (
                     ""
                   )}
+                  {/* --------------------------------- FORM ----------------------------------- */}
                   <div className="mx-4 mt-1">
                     <form onSubmit={handleSubmit}>
                       <input
@@ -72,21 +82,21 @@ const SignUp = () => {
                         placeholder="Name"
                         type="text"
                         required
-                        onBlur={(e) => setUserName(e.target.value)}
+                        onChange={(e) => setUserName(e.target.value)}
                       />
                       <input
                         className="block border-[#131932] border-b placeholder:text-[#131932] text-sm px-2 py-1 outline-none w-full my-8"
                         placeholder="Email"
                         type="email"
                         required
-                        onBlur={(e) => setUserEmail(e.target.value)}
+                        onChange={(e) => setUserEmail(e.target.value)}
                       />
                       <input
                         className="block border-[#131932] border-b placeholder:text-[#131932] text-sm px-2 py-1 outline-none w-full my-8"
                         placeholder="Password"
                         type="password"
                         required
-                        onBlur={(e) => setUserPassword(e.target.value)}
+                        onChange={(e) => setUserPassword(e.target.value)}
                       />
                       <input
                         type="submit"
@@ -108,7 +118,10 @@ const SignUp = () => {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold md:hidden">Sign Up</h1>
+              <h1 className="text-center py-4 text-2xl text-[#8d2232] font-bold md:hidden">
+                Sign Up
+              </h1>
+              {/* --------------------- sign up image --------------------------- */}
               <Image
                 className="h-[500px] w-[500px]"
                 src={authImg}
