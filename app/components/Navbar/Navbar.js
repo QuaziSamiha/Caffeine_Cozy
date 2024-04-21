@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 const Navbar = () => {
   
+  // userLogOut funtion is defined at AuthProvider
   const { userLogOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -22,11 +23,11 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar px-12 bg-[#3d2d2d] text-[#f1d1a8]">
+      <div className="navbar px-3 xl:px-12 bg-[#3d2d2d] text-[#f1d1a8]">
         <div className="flex-1">
           <div className="flex items-center">
-            <Image className="h-12 w-10" src={logo} alt="coffee cup" />
-            <p className="font-bold fon text-2xl tracking-wide uppercase">
+            <Image className="h-8 xl:h-12 w-6 xl:w-10" src={logo} alt="coffee cup" />
+            <p className="font-medium md:font-bold text-lg xl:text-2xl tracking-normal md:tracking-wide uppercase">
               CaffeineCozy
             </p>
           </div>
@@ -35,7 +36,7 @@ const Navbar = () => {
           <Link href="/">
             <button
               onClick={handleLogOut}
-              className="bg-[#f1d1a8] text-[#3d2d2d] uppercase font-bold px-6 py-2 rounded"
+              className="bg-[#f1d1a8] text-[#3d2d2d] uppercase text-sm xl:text-lg font-bold px-2 md:px-4 xl:px-6 py-2 rounded"
             >
               Sign Out
             </button>
