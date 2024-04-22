@@ -11,7 +11,7 @@ const Sidebar = () => {
   const currentUserRole = users.find(
     (user) => user.email === currentUserEmail
   )?.role;
-  console.log(currentUserRole);
+  // console.log(currentUserRole);
 
   return (
     <>
