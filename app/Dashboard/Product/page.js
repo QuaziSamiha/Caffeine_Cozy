@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard/ProductCard";
 const Product = () => {
   return (
     <>
-      <section className="mx-2 lg:mx-12 py-6">
+      <section className="mx-2 lg:mx-12 my-12 lg:my-0 py-6">
         <div className="text-center">
           <h1 className="font-bold text-lg md:text-2xl xl:text-3xl text-[#3d2d2d] uppercase">
             Find Your Favorite Cup

@@ -25,6 +25,7 @@ const ProductDetails = ({ params }) => {
     (user) => user.email === currentUserEmail
   )?.role;
 
+  // all data are dynamically loaded
   return (
     <>
       <section className="mx-6 lg:mx-24 my-12 py-6 flex justify-center items-center p-6 bg-base-100 rounded-sm shadow-lg">
@@ -33,7 +34,6 @@ const ProductDetails = ({ params }) => {
             <div className="md:w-1/2">
               <div className="flex justify-center items-center m-6 shadow-2xl rounded bg-white">
                 <Image
-                  className=""
                   src={productInfo.productImage}
                   alt={productInfo.productName}
                   width={300}
@@ -71,15 +71,16 @@ const ProductDetails = ({ params }) => {
                 </div>
               </div>
 
-              <p className="text-sm mb-3">
+              <p className="text-sm mb-1 lg:mb-3">
                 <span className="font-bold">Ingredients:</span>{" "}
                 {productInfo.productIngredients}
               </p>
 
-              <p className="font-bold text-sm mb-3">
-                Price: ${productInfo.price}
+              <p className="text-sm mb-1 lg:mb-3">
+                <span className="font-bold"> Price:</span>{" "}
+                <span className="font-medium">${productInfo.price}</span>
               </p>
-              <p className="text-justify mb-6 font-medium">
+              <p className="text-justify mb-3 lg:mb-6 font-medium">
                 {productInfo.productDescription}
               </p>
               <p className="text-center mb-2 font-semibold text-[#d6904b]">
@@ -88,6 +89,16 @@ const ProductDetails = ({ params }) => {
               <p className="text-justify italic font-semibold">
                 {productInfo.originHistory}
               </p>
+              {/* based on user role this portion will show -- only admin can see delete and updat button */}
+              <div className="flex justify-center items-center mx-8">
+                {currentUserRole === "user" ? (
+                  <button className="bg-[#fce1c3] mt-6 md:mt-12 w-full text-[#3d2d2d] px-3 py-1 rounded border-b-2 border-[#3d2d2d] text-sm font-semibold">
+                    Add to Cart
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div className="mx-3 lg:mx-6">
-        <div className="flex flex-col md:flex-row md:justify-evenly items-center bg-base-100 shadow-xl h-80 md:h-52 lg:h-48">
+        <div className="flex flex-col md:flex-row md:justify-evenly items-center bg-base-100 shadow-xl h-80 md:h-52 xl:h-48">
           <figure className="w-1/3">
             <Image
               className="w-32 h-28 md:h-36"

@@ -15,14 +15,14 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="drawer lg:drawer-open mt-4 xl:mt-12">
+      <div className="drawer lg:drawer-open mt-4 xl:mt-12 font-semibold">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
           <div className="ml-4">
             <label
               htmlFor="my-drawer-2"
-              className="bg-[#f1d1a8] text-[#3d2d2d] uppercase text-xs font-bold px-2 py-2 rounded drawer-button lg:hidden"
+              className="bg-[#3d2d2d] text-[#f1d1a8] uppercase text-xs font-bold px-2 py-2 rounded drawer-button lg:hidden"
             >
               Menu
             </label>
@@ -34,7 +34,7 @@ const Sidebar = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu px-4 pt-12 active:text-white w-60 min-h-full bg-[#3d2d2d] text-[#f1d1a8] font-medium uppercase">
+          <ul className="menu px-4 pt-12 w-60 min-h-full bg-[#f1d1a8] text-[#3d2d2d] font-medium uppercase">
             {/* Sidebar content here */}
             {currentUserRole === "user" ? (
               <div>

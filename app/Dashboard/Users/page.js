@@ -7,6 +7,8 @@ const Users = () => {
   // users array is getting from AuthProvider component
   const { users } = useContext(AuthContext);
   // console.log(users);
+  // as pagination or similar method is not used in this page, so showing last 6 users all the time
+  const lastSixUsers = users.slice(-6);
   return (
     <>
       <section className="mx-4 lg:mx-12 py-12">
@@ -14,7 +16,7 @@ const Users = () => {
           All Users
         </h1>
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-          {users.map((user, index) => (
+          {lastSixUsers.map((user, index) => (
             <div key={index}>
               <div className="mx-4 bg-base-100 shadow-xl rounded p-6 flex flex-col md:flex-row justify-around items-center">
                 <Image

@@ -17,7 +17,7 @@ const Profile = () => {
             <div className="md:w-1/2">
               <div className="flex justify-center items-center m-6 shadow-2xl rounded bg-white">
                 <Image
-                  className=""
+                  className="rounded"
                   src={userImage}
                   alt="coffee user"
                   width={300}
@@ -27,10 +27,11 @@ const Profile = () => {
             </div>
             <div className="md:w-1/2  text-sm mt-6 text-[#0f172a]">
               <div className="flex flex-col-reverse md:flex-row justify-between">
+                {/* getting from firebase auth */}
                 <h1 className="text-[#3d2d2d] text-lg xl:text-2xl font-bold uppercase mb-3">
                   {currentUserName}
                 </h1>
-                {/* based on user role this portion will show -- only admin can see delete and updat button */}
+                {/* buttond for show up --- not added any functionality */}
                 <div>
                   <div className="flex justify-end mb-3 md:mb-0">
                     <button>
@@ -46,9 +47,11 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
+              {/* getting from firebase auth */}
               <p className="text-sm mb-3">
                 <span className="font-semibold">Email:</span> {currentUserEmail}
               </p>
+              {/* some static fake data */}
               <p className="text-sm mb-3">
                 <span className="font-semibold"> Phone:</span> 036985648525
               </p>
