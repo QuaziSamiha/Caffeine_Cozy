@@ -22,7 +22,7 @@ const SignUp = () => {
   });
 
   // createUser function is defined at AuthProvided component
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   // form submit actions
   const handleSubmit = (e) => {
@@ -44,6 +44,8 @@ const SignUp = () => {
         console.log("signed up successfully");
         // if signed up successfully, then it will redirect to dashboard page
         router.push("/Dashboard");
+        // to store signed up user name
+        return updateUserProfile(formData.name);
       })
       .catch((error) => {
         // if any error occurs during sign up following code will be executed
