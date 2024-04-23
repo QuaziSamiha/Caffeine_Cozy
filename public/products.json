@@ -34,23 +34,5 @@
     "price": 16,
     "productIngredients": "Espresso",
     "originHistory": "The Espresso originated in Italy, where it's deeply ingrained in the coffee culture. It's renowned for its strong flavor and quick preparation."
-  },
-  {
-    "productId": 5,
-    "productName": "Cappuccino",
-    "productDescription": "Indulge in the classic combination of espresso, steamed milk, and airy foam in our Cappuccino. It's a comforting and luxurious coffee that's sure to satisfy.",
-    "productImage": "/images/5.png",
-    "price": 21,
-    "productIngredients": "Espresso, Steamed Milk, Foamed Milk",
-    "originHistory": "With roots in Italy, the Cappuccino has evolved into a beloved coffee worldwide. Its frothy texture and balanced flavors make it a perennial favorite."
-  },
-  {
-    "productId": 6,
-    "productName": "Americano",
-    "productDescription": "Experience the bold and robust flavors of our Americano, crafted by combining rich espresso with hot water. It's a straightforward yet satisfying coffee choice.",
-    "productImage": "/images/6.png",
-    "price": 17,
-    "productIngredients": "Espresso, Hot Water",
-    "originHistory": "Originating in America, the Americano is a popular choice for those who prefer a strong and straightforward coffee. It's celebrated for its simplicity and versatility."
   }
 ]

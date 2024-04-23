@@ -2,6 +2,13 @@ run the application
 ```bash
 npm run dev
 
+1. add price to card -- done
+2. user profile page
+3. pagination -- no need
+4. detail page making
+5. user admin role issue
+6. responsiveness check
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 1. Authentication System:
@@ -29,3 +36,4 @@ Additionally, include add, delete, and update products button there, don’t nee
 Implement a logout button within the navbar.
 8. Responsiveness:
 Ensure the application is responsive across various devices and screen sizes.
+

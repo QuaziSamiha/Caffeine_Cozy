@@ -4,12 +4,12 @@ import Image from "next/image";
 import deleteBtn from "@/public/images/delete.png";
 import updateBtn from "@/public/images/update.png";
 // essentials import
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
-  console.log(product.productImage);
+  console.log(product);
   // getting from AuthProvider component
   const { users, currentUserEmail } = useContext(AuthContext);
   // console.log(users);
@@ -19,11 +19,10 @@ const ProductCard = ({ product }) => {
     (user) => user.email === currentUserEmail
   )?.role;
 
-
   return (
     <>
       <div className="mx-3 lg:mx-6">
-        <div className="flex flex-col md:flex-row md:justify-evenly items-center bg-base-100 shadow-xl h-80 md:h-52 lg:h-44">
+        <div className="flex flex-col md:flex-row md:justify-evenly items-center bg-base-100 shadow-xl h-80 md:h-52 lg:h-48">
           <figure className="w-1/3">
             <Image
               className="w-32 h-28 md:h-36"
@@ -40,7 +39,7 @@ const ProductCard = ({ product }) => {
             <p className="text-xs text-[#0f172a] text-justify">
               {product.productDescription}
             </p>
-            <p>{product.productPrice}</p>
+            <p className="font-bold text-sm text-[#0f172a] mt-1">Price: ${product.price}</p>
             <div className="flex justify-between items-center mt-3">
               <div>
                 <button className="bg-[#fce1c3] text-[#3d2d2d] px-3 py-1 rounded border-b-2 border-[#3d2d2d] text-sm font-semibold">
