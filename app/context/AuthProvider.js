@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  console.log(currentUserEmail);
+  // console.log(currentUserEmail);
 
   //   used in Navbar component
   const userLogOut = () => {
