@@ -9,7 +9,7 @@ import { AuthContext } from "@/app/context/AuthProvider";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   // getting from AuthProvider component
   const { users, currentUserEmail } = useContext(AuthContext);
   // console.log(users);

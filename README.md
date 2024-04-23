@@ -8,6 +8,7 @@ npm run dev
 4. detail page making
 5. user admin role issue
 6. responsiveness check
+7. add button on sidebar
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
