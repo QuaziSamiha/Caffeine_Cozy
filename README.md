@@ -2,10 +2,12 @@ run the application
 ```bash
 npm run dev
 
+GitHub [https://github.com/QuaziSamiha/Caffeine_Cozy.git]
+
 1. add price to card -- done
 2. user profile page
 3. pagination -- no need
-4. detail page making
+4. detail page making -- done
 5. user admin role issue
 6. responsiveness check
 7. add button on sidebar
@@ -27,9 +29,11 @@ Administrators should have access to the "Product," "Profile," and "Users List" 
 4. Product Page Design:
 Design a product page displaying product cards.
 Each product card should include an image container, product name, description, and price.
+
 5. Dynamic Product Viewing:
-Develop a dynamic product view page.
+Developed a dynamic product view page.
 Upon clicking on a product card, users should be directed to a dynamic page displaying detailed information about the selected product.
+
 6. Admin Product Management:
 Within the admin section, replicate the product page designed for users.
 Additionally, include add, delete, and update products button there, don’t need to implement functionality.

@@ -51,10 +51,13 @@ const Sidebar = () => {
                   <Link href="/Dashboard/Product">Product</Link>
                 </li>
                 <li>
-                  <Link href="/Dashboard/Profile">Profile</Link>
+                  <Link href="/Dashboard/AddCoffee">Add Coffee</Link>
                 </li>
                 <li>
                   <Link href="/Dashboard/Users">Users</Link>
+                </li>
+                <li>
+                  <Link href="/Dashboard/Profile">Profile</Link>
                 </li>
               </div>
             )}
