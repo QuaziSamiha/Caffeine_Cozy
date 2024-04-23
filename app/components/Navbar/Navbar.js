@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link href="/">
             <button
               onClick={handleLogOut}
-              className="bg-[#f1d1a8] text-[#3d2d2d] uppercase text-sm xl:text-lg font-bold px-2 md:px-4 xl:px-6 py-2 rounded"
+              className="bg-[#f1d1a8] text-[#3d2d2d] uppercase text-sm xl:text-base font-bold px-2 md:px-4 xl:px-6 py-2 rounded"
             >
               Sign Out
             </button>

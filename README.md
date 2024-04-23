@@ -35,10 +35,12 @@ Developed a dynamic product view page.
 Upon clicking on a product card, users should be directed to a dynamic page displaying detailed information about the selected product.
 
 6. Admin Product Management:
-Within the admin section, replicate the product page designed for users.
-Additionally, include add, delete, and update products button there, don’t need to implement functionality.
+Within the admin section, replicated the product page designed for users.
+Additionally, include delete, and update products button there.
+
 7. Navbar Integration:
-Implement a logout button within the navbar.
+Implemented a logout button within the navbar.
+
 8. Responsiveness:
 Ensure the application is responsive across various devices and screen sizes.
 
