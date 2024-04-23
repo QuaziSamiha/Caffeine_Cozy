@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log(currentUser.email);
       // console.log(currentUser);
-      setCurrentUserEmail(currentUser ? currentUserEmail : "");
+      setCurrentUserEmail(currentUser ? currentUser.email : "");
       setCurrentUserName(currentUser ? currentUser.displayName : "");
     });
 
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // console.log(currentUserEmail);
+  console.log(currentUserEmail);
 
   //   used in Navbar component
   const userLogOut = () => {
